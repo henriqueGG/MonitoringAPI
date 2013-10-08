@@ -3,3 +3,8 @@ c:\users\tiago.nunes\documents\visual studio 2010\Projects\monitoring\monitoring
 c:\users\tiago.nunes\documents\visual studio 2010\Projects\monitoring\monitoring\obj\Debug\ResolveAssemblyReference.cache
 c:\users\tiago.nunes\documents\visual studio 2010\Projects\monitoring\monitoring\obj\Debug\monitoring.dll
 c:\users\tiago.nunes\documents\visual studio 2010\Projects\monitoring\monitoring\obj\Debug\monitoring.pdb
+C:\TFS\MonitoringAPI\monitoring\bin\monitoring.dll
+C:\TFS\MonitoringAPI\monitoring\bin\monitoring.pdb
+C:\TFS\MonitoringAPI\monitoring\obj\Debug\ResolveAssemblyReference.cache
+C:\TFS\MonitoringAPI\monitoring\obj\Debug\monitoring.dll
+C:\TFS\MonitoringAPI\monitoring\obj\Debug\monitoring.pdb
