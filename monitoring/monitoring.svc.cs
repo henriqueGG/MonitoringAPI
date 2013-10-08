@@ -7,43 +7,45 @@ using System.ServiceModel.Web;
 using System.Text;
 using SolrNet;
 using Microsoft.Practices.ServiceLocation;
+using SolrNet.Commands.Parameters;
 
 namespace monitoring
-{
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
+{    
     public class monitoring : Imonitoring
-    {
-        public string GetData(int value)
-        {
-            return string.Format("You entered: {0}", value);
-        }
+    {      
+        public Result NewsItems(string fullText, string since, int page, int itemsPerPage)
+        {          
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
+            if (itemsPerPage == 0)
             {
-                throw new ArgumentNullException("composite");
+                itemsPerPage = 25;
             }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
-        }
 
-        public SolrQueryResults<Article> GetSampleMethod(string fullText, string since)
-        {
-            Startup.Init<Article>("http://ssindx13:8080/solr/agents/");
+            DateTime sinceDate = DateTime.MinValue;
+
+            if (!string.IsNullOrEmpty(since))
+            {
+                sinceDate = Convert.ToDateTime(since);
+            }
 
             var solr = ServiceLocator.Current.GetInstance<ISolrOperations<Article>>();
-            var results = solr.Query(new SolrQueryByField("id", "990129-wisetveyes19904855"));            
+            var articles = solr.Query(SolrQuery.All, new QueryOptions
+                {
+                    FilterQueries = new ISolrQuery[] {
+                            new SolrQueryByField("fulltext", fullText),
+                            new SolrQueryByRange<DateTime>("pub_date", sinceDate, DateTime.Now )
+                    },
+                    Start = page * itemsPerPage,
+                    Rows = itemsPerPage
+                }
+            );
 
-            //StringBuilder strReturnValue = new StringBuilder();
-            //// return username prefixed as shown below
-            //strReturnValue.Append(string.Format
-            //("{1}You have entered userName as {0}", fullText, since));           
+            Result result = new Result();
 
-            return results;
+            result.Articles = articles;
+            result.ResultCount = articles.NumFound;
+
+            return result;
         }
     }
 }

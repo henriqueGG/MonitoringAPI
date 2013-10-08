@@ -60,6 +60,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Global.asax" />
     <Content Include="monitoring.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -70,7 +71,11 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Model\Article.cs" />
+    <Compile Include="Model\Result.cs" />
     <Compile Include="monitoring.svc.cs">
       <DependentUpon>monitoring.svc</DependentUpon>
     </Compile>
