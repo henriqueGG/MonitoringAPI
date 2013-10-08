@@ -8,3 +8,9 @@ C:\TFS\MonitoringAPI\monitoring\bin\monitoring.pdb
 C:\TFS\MonitoringAPI\monitoring\obj\Debug\ResolveAssemblyReference.cache
 C:\TFS\MonitoringAPI\monitoring\obj\Debug\monitoring.dll
 C:\TFS\MonitoringAPI\monitoring\obj\Debug\monitoring.pdb
+C:\TFS\MonitoringAPI\monitoring\bin\Microsoft.Practices.ServiceLocation.dll
+C:\TFS\MonitoringAPI\monitoring\bin\SolrNet.dll
+C:\TFS\MonitoringAPI\monitoring\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\TFS\MonitoringAPI\monitoring\bin\Microsoft.Practices.ServiceLocation.xml
+C:\TFS\MonitoringAPI\monitoring\bin\SolrNet.pdb
+C:\TFS\MonitoringAPI\monitoring\bin\SolrNet.xml

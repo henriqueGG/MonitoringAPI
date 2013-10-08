@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monitoring", "monitoring\monitoring.csproj", "{484C6DBA-2F40-4238-A86B-255CD80B6BCE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{5A60A05A-974E-4057-8EA7-8185EDAAB497}"
+	ProjectSection(SolutionItems) = preProject
+		packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll = packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll
+		packages\SolrNet.0.4.0-beta2\lib\SolrNet.dll = packages\SolrNet.0.4.0-beta2\lib\SolrNet.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
