@@ -26,10 +26,10 @@ public class Article
     public int media_id { get; set; }
 
     [SolrField("author")]
-    public string Manufacturer { get; set; }
+    public string author { get; set; }
 
     [SolrField("author_token")]
-    public string Manufacturer { get; set; }
+    public string author_token { get; set; }
 
     [SolrField("author_prefix")]
     public string author_prefix { get; set; }
