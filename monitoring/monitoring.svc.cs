@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using SolrNet;
+using Microsoft.Practices.ServiceLocation;
 
 namespace monitoring
 {
@@ -29,13 +31,19 @@ namespace monitoring
             return composite;
         }
 
-        public string GetSampleMethod(string fullText, string since)
+        public SolrQueryResults<Article> GetSampleMethod(string fullText, string since)
         {
-            StringBuilder strReturnValue = new StringBuilder();
-            // return username prefixed as shown below
-            strReturnValue.Append(string.Format
-            ("{1}You have entered userName as {0}", fullText, since));
-            return strReturnValue.ToString();
+            Startup.Init<Article>("http://ssindx13:8080/solr/agents/");
+
+            var solr = ServiceLocator.Current.GetInstance<ISolrOperations<Article>>();
+            var results = solr.Query(new SolrQueryByField("id", "990129-wisetveyes19904855"));            
+
+            //StringBuilder strReturnValue = new StringBuilder();
+            //// return username prefixed as shown below
+            //strReturnValue.Append(string.Format
+            //("{1}You have entered userName as {0}", fullText, since));           
+
+            return results;
         }
     }
 }

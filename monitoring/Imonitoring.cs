@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using SolrNet;
 
 namespace monitoring
 {
@@ -21,7 +22,7 @@ namespace monitoring
 
         [OperationContract(Name = "GetSampleMethod")]
         [WebGet(UriTemplate = "GetSampleMethod?fulltext={fullText}&since={since}")]
-        string GetSampleMethod(string fullText, string since);
+        SolrQueryResults<Article> GetSampleMethod(string fullText, string since);
 
         // TODO: Add your service operations here
     }

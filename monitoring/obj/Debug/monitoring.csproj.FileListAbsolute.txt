@@ -14,3 +14,14 @@ C:\TFS\MonitoringAPI\monitoring\bin\Microsoft.Practices.ServiceLocation.pdb
 C:\TFS\MonitoringAPI\monitoring\bin\Microsoft.Practices.ServiceLocation.xml
 C:\TFS\MonitoringAPI\monitoring\bin\SolrNet.pdb
 C:\TFS\MonitoringAPI\monitoring\bin\SolrNet.xml
+C:\TMS\MonitoringAPI\monitoring\bin\monitoring.dll
+C:\TMS\MonitoringAPI\monitoring\bin\monitoring.pdb
+C:\TMS\MonitoringAPI\monitoring\bin\Microsoft.Practices.ServiceLocation.dll
+C:\TMS\MonitoringAPI\monitoring\bin\SolrNet.dll
+C:\TMS\MonitoringAPI\monitoring\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\TMS\MonitoringAPI\monitoring\bin\Microsoft.Practices.ServiceLocation.xml
+C:\TMS\MonitoringAPI\monitoring\bin\SolrNet.pdb
+C:\TMS\MonitoringAPI\monitoring\bin\SolrNet.xml
+C:\TMS\MonitoringAPI\monitoring\obj\Debug\monitoring.csprojResolveAssemblyReference.cache
+C:\TMS\MonitoringAPI\monitoring\obj\Debug\monitoring.dll
+C:\TMS\MonitoringAPI\monitoring\obj\Debug\monitoring.pdb
