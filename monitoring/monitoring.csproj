@@ -74,8 +74,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Model\ArchiveArticle.cs" />
     <Compile Include="Model\Article.cs" />
     <Compile Include="Model\Result.cs" />
+    <Compile Include="Model\SolrWISEdoc.cs" />
     <Compile Include="monitoring.svc.cs">
       <DependentUpon>monitoring.svc</DependentUpon>
     </Compile>

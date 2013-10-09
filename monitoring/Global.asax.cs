@@ -12,7 +12,8 @@ namespace monitoring
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            Startup.Init<Article>("http://ssindx13:8080/solr/agents/");
+            Startup.Init<ArchiveArticle>("http://ssindx13:8080/solr/agents/");
+            Startup.Init<SolrWISEdoc>("http://10.4.0.133:8080/solr/wise/");
         }        
     }
 }

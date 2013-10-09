@@ -13,7 +13,7 @@ namespace monitoring
     public interface Imonitoring
     {        
         [OperationContract(Name = "NewsItems")]
-        [WebGet(UriTemplate = "NewsItems?fulltext={fullText}&since={since}&page={page}&itemsPerPage={itemsPerPage}")]
-        Result NewsItems(string fullText, string since, int page, int itemsPerPage);
+        [WebGet(UriTemplate = "NewsItems?fulltext={fullText}&since={since}&page={page}&itemsPerPage={itemsPerPage}&source={source}")]
+        Result NewsItems(string fullText, string since, int page, int itemsPerPage, string source);
     }   
 }

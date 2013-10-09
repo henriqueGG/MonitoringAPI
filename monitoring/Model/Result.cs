@@ -5,6 +5,6 @@ using SolrNet;
 
 public class Result
 {
-    public SolrQueryResults<Article> Articles { get; set; }
+    public List<Article> Articles { get; set; }
     public int ResultCount { get; set; }
 }
