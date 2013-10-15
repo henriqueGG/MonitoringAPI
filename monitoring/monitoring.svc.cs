@@ -109,15 +109,21 @@ namespace monitoring
         private SolrNet.SolrQueryResults<ArchiveArticle> GetArchiveSearchSolr(string fullText, DateTime sinceDate, int page, int itemsPerPage)
         {
             var solr = ServiceLocator.Current.GetInstance<ISolrOperations<ArchiveArticle>>();
+
+            List<ISolrQuery> query = new List<ISolrQuery>();
+
+            if(!string.IsNullOrEmpty(fullText))
+                query.Add(new SolrQueryByField("fulltext", fullText));
+
+            if (sinceDate > DateTime.MinValue)
+                query.Add(new SolrQueryByRange<DateTime>("pub_date", sinceDate, DateTime.MaxValue));
+            
+
             var articles = solr.Query(SolrQuery.All, new QueryOptions
             {
-                FilterQueries = new ISolrQuery[] {
-                            new SolrQueryByField("fulltext", fullText),
-                            new SolrQueryByRange<DateTime>("pub_date", sinceDate, DateTime.Now )
-                    },
+                FilterQueries = query,
                 Start = page * itemsPerPage,
-                Rows = itemsPerPage,
-                OrderBy = new[] { new SortOrder("pub_date", Order.DESC) }
+                Rows = itemsPerPage
             }
             );
 
