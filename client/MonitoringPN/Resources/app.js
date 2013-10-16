@@ -28,7 +28,7 @@ var Cloud = require('ti.cloud');
 Cloud.debug = true;
 
 var submit = Ti.UI.createButton({
-	title : 'Enable Push Notification',
+	title : 'Subscribe Push Notification',
 	color : '#010',
 	height : '53dp',
 	width : '200dp',
@@ -44,8 +44,8 @@ submit.addEventListener('click', function(e) {
 function loginDefault(e) {
 	//Create a Default User in Cloud Console, and login with same credential
 	Cloud.Users.login({
-		login : 'tito',
-		password : 'tito'
+		login : 'cisionpush',
+		password : 'cisionpush'
 	}, function(e) {
 		if (e.success) {
 			alert("Login success");
@@ -73,8 +73,9 @@ function defaultSubscribe() {
 
 
 CloudPush.addEventListener('callback', function(evt) {
-	alert(evt.payload);
+	var payload = JSON.parse(evt.payload);
 });
+
 CloudPush.addEventListener('trayClickLaunchedApp', function(evt) {
 	Ti.API.info('@@## Tray Click Launched App (app was not running)');
 });
