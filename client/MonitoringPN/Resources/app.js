@@ -11,8 +11,7 @@ var CloudPush = require('ti.cloudpush');
 var device = "";
 CloudPush.retrieveDeviceToken({
     success: function deviceTokenSuccess(e) {
-    	device = e.deviceToken;
-    	alert('www ' + device);
+    	Ti.Network.remoteDeviceUUID = e.deviceToken;
         Ti.API.info('Device Token: ' + e.deviceToken);
     },
     error: function deviceTokenError(e) {
@@ -60,14 +59,14 @@ function loginDefault(e) {
 function defaultSubscribe() {
 	Cloud.PushNotifications.subscribe({
 	    channel: 'alert', //'alert' is channel name
-	    device_token: 'APA91bHKlbuycvX4C1Eh0fkEqFerHtlFkeJlRbRpPrsA7-bbryW__87xB5bEbSZnaeHHojHEIlooAh8v_n2BdEXgPvcYFFkJvYeE4jRPGWPywIhFuEBkEzIZa0w3oS3IoVtkBC6h3h5Ky-Pot351Tcw6PSCqbQUetg',
+	    device_token: Ti.Network.remoteDeviceUUID,//'APA91bHKlbuycvX4C1Eh0fkEqFerHtlFkeJlRbRpPrsA7-bbryW__87xB5bEbSZnaeHHojHEIlooAh8v_n2BdEXgPvcYFFkJvYeE4jRPGWPywIhFuEBkEzIZa0w3oS3IoVtkBC6h3h5Ky-Pot351Tcw6PSCqbQUetg',
 	    type: 'gcm' //here i am using gcm, it is recommended one
 	}, function (e) {
 	    if (e.success) {
-	        alert('Subscribed for Push Notification! ' + e);
+	        //alert('Subscribed for Push Notification! ' + e);
 	    } else {
-	        alert('Subscribe error:' + ((e.error &&  e.message) || JSON.stringify(e)));
-	        alert(e);
+	        //alert('Subscribe error:' + ((e.error &&  e.message) || JSON.stringify(e)));
+	        //alert(e);
 	    }
 	 });
 }

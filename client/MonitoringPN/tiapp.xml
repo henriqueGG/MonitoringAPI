@@ -6,7 +6,9 @@
     <property name="acs-oauth-secret-development" type="string">vxdeEUrgpDpzA2Q925GkYgYEWNsHuqM3</property>
     <property name="acs-oauth-key-development" type="string">Jox43ZM6JXGs0tmAd9saHR8woCUN4OUp</property>
     <property name="acs-api-key-development" type="string">I3elZAPUjQeELY1GoVSMvUGrCI0d4kvN</property>
+    <property name="ti.android.fastdev">false</property>
     <id>com.cision</id>
+    
     <name>MonitoringPN</name>
     <version>1.0</version>
     <publisher>luis.rente</publisher>
