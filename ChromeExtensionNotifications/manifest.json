@@ -1,0 +1,17 @@
+{
+   "app": {
+      "background": {
+         "scripts": [ "background.js" ]
+      }
+   },
+   "description": "Notifications",
+   "icons": {
+      "128": "icon.jpg",
+      "16": "icon.jpg",
+      "24": "icon.jpg"
+   },   
+   "manifest_version": 2,
+   "name": "Notifications",
+   "permissions": [ "notifications", "pushMessaging" , "http://*/" ],
+   "version": "2.6"
+}
